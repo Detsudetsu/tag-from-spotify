@@ -22,7 +22,7 @@ def get_full_album_tracks(album):
     return album_tracks
 
 
-def tfsp(album_id, dir="."):
+def main(album_id, dir="."):
     album = sp.album(album_id)
     album_dir = Path(dir)
     songfiles = [p for p in sorted(album_dir.iterdir()) if p.is_file()]
@@ -66,4 +66,4 @@ def tfsp(album_id, dir="."):
 
 
 if __name__ == "__main__":
-    fire.Fire(tfsp)
+    fire.Fire(main)
