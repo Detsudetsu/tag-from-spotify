@@ -1,4 +1,4 @@
-from . import main
+from . import tag_from_spotify
 
 if __name__ == '__main__':
-    main()
+    tag_from_spotify.main()
