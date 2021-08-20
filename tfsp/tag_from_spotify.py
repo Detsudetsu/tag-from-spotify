@@ -5,7 +5,7 @@ from click import confirm
 import fire
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-import taglib
+import mutagen
 import re
 from tqdm import tqdm
 
@@ -38,19 +38,15 @@ def main(album_id, dir="."):
     album_tracks = get_full_album_tracks(album)
     pbar = tqdm(total=total_tracks_album)
     for file, track in zip(songfiles, album_tracks):
-        song = taglib.File(str(file))
+        song = mutagen.File(file, easy=True)
 
-        # always wrap values into a list even it is single value
-        # and no tag can contain 'int'
-        song.tags["DISCNUMBER"] = [str(track["disc_number"])]
-        song.tags["TRACKNUMBER"] = [str(track["track_number"])]
-        song.tags["TITLE"] = [track["name"]]
+        song.tags["DISCNUMBER"] = str(track["disc_number"])
+        song.tags["TRACKNUMBER"] = str(track["track_number"])
+        song.tags["TITLE"] = track["name"]
         song.tags["ARTIST"] = [a["name"] for a in track["artists"]]
-        song.tags["ALBUM"] = [album["name"]]
+        song.tags["ALBUM"] = album["name"]
         song.tags["ALBUMARTIST"] = [a["name"] for a in album["artists"]]
         song.save()
-        # pprint(song.tags)
-        song.close()
 
         # track name may contain some characters that won't be allowed to use in filename
         # so make sure to turn it into a valid filename
