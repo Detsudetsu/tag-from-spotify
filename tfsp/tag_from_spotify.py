@@ -48,14 +48,14 @@ def main(album_id, dir="."):
         song.tags["ALBUMARTIST"] = [a["name"] for a in album["artists"]]
         song.save()
 
-        # track name may contain some characters that won't be allowed to use in filename
+        # now rename the file, but track name may contain some characters that won't be allowed to use in filename
         # so make sure to turn it into a valid filename
         track_name = re.sub(r'[\\/:*?"<>|]+', "_", track["name"])
         file_name = (
             str(track["disc_number"]) + "." + str(track["track_number"]).zfill(2) + ". " + track_name + file.suffix
         )
         file.rename(album_dir / file_name)
-        
+
         pbar.update()
 
     album_dir.rename(album_dir.parent / album["name"])
