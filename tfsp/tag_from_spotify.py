@@ -2,7 +2,6 @@ from pprint import pprint
 from pathlib import Path
 
 from click import confirm
-import fire
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import mutagen
@@ -22,7 +21,7 @@ def get_full_album_tracks(album):
     return album_tracks
 
 
-def main(album_id, dir="."):
+def tfsp(album_id, dir="."):
     album = sp.album(album_id)
     album_dir = Path(dir)
     songfiles = [p for p in sorted(album_dir.iterdir()) if p.is_file()]
@@ -60,6 +59,3 @@ def main(album_id, dir="."):
 
     album_dir.rename(album_dir.parent / album["name"])
 
-
-if __name__ == "__main__":
-    fire.Fire(main)
