@@ -1,4 +1,5 @@
 # tag-from-spotify
+![output](https://user-images.githubusercontent.com/36166146/130316281-506d9210-1744-455a-9e47-82f98e1ef3ed.gif)
 `tag-from-spotify` is a Python CLI tool to fetch audio metadata from Spotify and tag them to your audio files.
 
 ## Installation
@@ -15,7 +16,6 @@ Then add your Client ID and Client Secret to your enviroment variables like this
 export SPOTIPY_CLIENT_ID='your-spotify-client-id'
 export SPOTIPY_CLIENT_SECRET='your-spotify-client-secret'
 ```
-
 
 ## Usage
 ```
