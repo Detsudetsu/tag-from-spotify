@@ -22,7 +22,7 @@ export SPOTIPY_CLIENT_SECRET='your-spotify-client-secret'
 tfsp ALBUM_ID [DIR]
 ```
 - ALBUM_ID: the album ID, URI or URL such as the following examples:
-  - ID: 4CBihnTUg8QyQZuPpRxqNg
-  - URI: spotify:album:4CBihnTUg8QyQZuPpRxqNg
-  - URL: https://open.spotify.com/album/4CBihnTUg8QyQZuPpRxqNg
+  - ID: 0WHIgko1oBSbayvwe9tdze
+  - URI: spotify:album:0WHIgko1oBSbayvwe9tdze
+  - URL: https://open.spotify.com/album/0WHIgko1oBSbayvwe9tdze
 - DIR: path to the directory containing audio files to set tags (cwd by default)
