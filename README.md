@@ -4,9 +4,11 @@
 `tag-from-spotify` is a Python CLI tool to fetch audio metadata from Spotify and tag them to your audio files.
 
 ## Installation
+Since this package is meant to be an end-user app (not a library), it is highly recommended to install with `pipx`.
 ```
-pip install tag-from-spotify
+pipx install tag-from-spotify
 ```
+Of course, you can use `pip` as well.
 
 ## Authorization
 ### 1. Create Credentials
