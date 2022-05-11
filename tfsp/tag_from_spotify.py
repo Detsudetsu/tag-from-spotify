@@ -4,12 +4,16 @@ from pathlib import Path
 from click import confirm
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+from spotipy.cache_handler import CacheFileHandler
 import mutagen
 import re
 from tqdm import tqdm
 
 
-sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(), language="ja")
+sp = spotipy.Spotify(
+    auth_manager=SpotifyClientCredentials(cache_handler=CacheFileHandler(cache_path=Path.home() / ".cache-tfsp")),
+    language="ja",
+)
 
 
 def get_full_album_tracks(album):
@@ -58,4 +62,3 @@ def tfsp(album_id, dir="."):
         pbar.update()
 
     album_dir.rename(album_dir.parent / album["name"])
-
