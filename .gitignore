@@ -4,3 +4,4 @@
 /dist
 /tag_from_spotify.egg-info
 /tfsp/**
+.env

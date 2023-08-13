@@ -8,7 +8,10 @@ from spotipy.cache_handler import CacheFileHandler
 import mutagen
 import re
 from tqdm import tqdm
+from dotenv import load_dotenv
 
+
+load_dotenv()
 
 sp = spotipy.Spotify(
     auth_manager=SpotifyClientCredentials(cache_handler=CacheFileHandler(cache_path=Path.home() / ".cache-tfsp")),
