@@ -29,3 +29,11 @@ tfsp DIR ALBUM_ID
   - ID: 0WHIgko1oBSbayvwe9tdze
   - URI: spotify:album:0WHIgko1oBSbayvwe9tdze
   - URL: https://open.spotify.com/album/0WHIgko1oBSbayvwe9tdze
+
+## Development
+Create an `.env` that contains Spotify Client ID and Client Secret for the repository root (so you don't have to set them to the environment variables)
+
+```.env
+SPOTIPY_CLIENT_ID=piyopiyopiyopiyo
+SPOTIPY_CLIENT_SECRET=megamegamegamega
+```
