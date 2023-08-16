@@ -1,6 +1,7 @@
 # tag-from-spotify
 [![PyPI](https://img.shields.io/pypi/v/tag-from-spotify)](https://pypi.org/project/tag-from-spotify/)
-![output](https://user-images.githubusercontent.com/36166146/130316281-506d9210-1744-455a-9e47-82f98e1ef3ed.gif)
+![out4](https://github.com/Detsudetsu/tag-from-spotify/assets/36166146/3a4d3afb-63ac-408d-b909-d6cd9fdc17d7)
+
 `tag-from-spotify` is a Python CLI tool to fetch audio metadata from Spotify and tag them to your audio files.
 
 ## Installation
